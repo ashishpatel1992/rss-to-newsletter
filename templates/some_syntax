@@ -1,0 +1,46 @@
+<!-- <div class="container">
+  <p>My string: {{my_string}}</p>
+  <p>Value from the list: {{my_list[3]}}</p>
+  <p>Loop through the list:</p>
+  <ul>
+    {% for n in my_list %}
+    <li>{{n}}</li>
+    {% endfor %}
+  </ul>
+</div> -->
+
+
+
+### LATEST
+{% for dict_item in parent_list %}
+  {% for value in dict_item.items() %}
+    <h3>Title: {{value.title}}</h3>
+    <h3>ID: {{value.id}} </h3>
+    {{value.summary}}
+    <h4> Now presenting content!! </h4>
+    {{value['content']}}
+  {% endfor %}
+{% endfor %}
+
+
+### For demo_template.html (Working without good visual stuff)
+{% for dict_item in parent_list %}
+<table class="es-left" cellspacing="0" cellpadding="0" align="left" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left;">
+  <tr style="border-collapse:collapse;">
+    <td class="es-m-p20b" width="360" align="left" style="padding:0;Margin:0;">
+      <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;">
+        <tr style="border-collapse:collapse;">
+          <td align="left" style="padding:0;Margin:0;padding-top:15px;"><h3 style="Margin:0;line-height:24px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:20px;font-style:normal;font-weight:normal;color:#333333;">{{dict_item.title}}</h3></td>
+        </tr>
+        <tr style="border-collapse:collapse;">
+          <td align="left" style="padding:0;Margin:0;padding-top:10px;padding-bottom:10px;">
+            {{dict_item.summary}}}
+          </td>
+        </tr>
+        <tr style="border-collapse:collapse;">
+          <td align="left" style="padding:0;Margin:0;"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;"><a href="http://#" target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:14px;text-decoration:underline;color:#2CB543;">Read More +</a></p></td>
+        </tr>
+      </table></td>
+    </tr>
+  </table>
+  {% endfor %}
