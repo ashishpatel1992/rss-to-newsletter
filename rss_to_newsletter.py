@@ -28,12 +28,12 @@ print('LOG: Done fetching feed.xml!')
 f = feedparser.parse(url_file_stream_or_string=default_file)
 
 print(len(f['entries']))
-def key_at_depth(dict, depth):
-     if depth > 0:
-         return [ key for subdct in dict.itervalues() for key in key_at_depth(subdct, depth-1)  ]
-     else:
-         return dict.keys()
-# print(key_at_depth(f['entries'],1))
+# def key_at_depth(dict, depth):
+#      if depth > 0:
+#          return [ key for subdct in dict.itervalues() for key in key_at_depth(subdct, depth-1)  ]
+#      else:
+#          return dict.keys()
+# # print(key_at_depth(f['entries'],1))
 
 print(type(f['entries']))
 for item in f['entries']:
